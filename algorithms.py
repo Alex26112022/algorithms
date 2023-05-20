@@ -184,3 +184,30 @@
 #             flag = False
 #             break
 #     return flag
+
+
+# Бинарный поиск отсортированного массива
+def left_bound(a, key):
+    """ Ищет индекс левой границы искомого key для массива a """
+    left = -1
+    right = len(a)
+    while right - left > 1:
+        middle = (left + right) // 2
+        if a[middle] < key:
+            left = middle
+        else:
+            right = middle
+    return left
+
+
+def right_bound(a, key):
+    """ Ищет индекс правой границы искомого key для массива a """
+    left = -1
+    right = len(a)
+    while right - left > 1:
+        middle = (left + right) // 2
+        if a[middle] <= key:
+            left = middle
+        else:
+            right = middle
+    return right
